@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>Base html</title>
+</head>
+<body>
+    <header>
+        <nav class="nav-extended">
+            <div class="nav-wrapper">
+           
+            </div>
+            <div class="nav-content">
+            <ul class="tabs tabs-transparent">
+                <li class="tab"><a href="/">Hello</a></li>
+                <li class="tab"><a class="active" href="{% url 'about' %}">About</a></li>
+                <li class="tab"><a class="active" href="{% url 'finches_create' %}">Add a finch</a></li>
+                <li class="tab"><a href="{% url 'index'  %}">All Finches</a></li>
+                <li class="tab"><a href="{% url 'toys_create' %}">Add a Toy</a></li>
+                <li class="tab"><a href="{% url 'toys_index' %}">View All Toys</a></li>
+            </ul>
+            </div>
+        </nav>
+        
+      
+        
+    </header>
+
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+            
+    <footer class="page-footer">
+        <div class="right">All rights reserved, &copy; 2023 Cat Collector &nbsp;</div>
+    </footer>
+</body>
+</html>
